@@ -1,10 +1,13 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     name: spark-master
   name: spark-master
 spec:
+  selector:
+    matchLabels:
+      name: spark-master
   replicas: 1
   template:
     metadata:
